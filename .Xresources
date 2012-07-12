@@ -1,0 +1,4 @@
+xterm*background: black
+xterm*foreground: white
+xterm*font: 10x20
+xterm*fontMenu*font6*Label: Huge
