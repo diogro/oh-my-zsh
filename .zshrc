@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/composer_xe_2011_sp1.9.293/bin/compilervars.sh intel64
+source /opt/intel/composer_xe_2011_sp1/bin/compilervars.sh intel64
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
