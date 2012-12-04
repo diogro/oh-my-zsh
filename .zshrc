@@ -76,3 +76,5 @@ alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
 alias ack='ack-grep'
+
+scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
