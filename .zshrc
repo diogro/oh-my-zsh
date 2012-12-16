@@ -78,3 +78,5 @@ alias sudo='nocorrect noglob sudo'
 alias ack='ack-grep'
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
