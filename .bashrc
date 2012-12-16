@@ -81,3 +81,5 @@ P="\[\033[0m\]" # Neutral
     #  . /etc/bash_completion
     #fi
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
