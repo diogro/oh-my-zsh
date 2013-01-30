@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/composer_xe_2011_sp1.9.293/bin/compilervars.sh intel64
+source /opt/intel/composer_xe_2011_sp1/bin/compilervars.sh intel64
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -30,7 +30,7 @@ source /opt/intel/composer_xe_2011_sp1.9.293/bin/compilervars.sh intel64
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github)
+plugins=(git github virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,7 +62,7 @@ REPORTTIME=10
 alias ll='ls -l'
 alias la='ls -a'
 alias gibbs='ssh gibbs.if.usp.br'    
-alias ap='ssh -X diogro@fleming.cecm.usp.br -D 12345'
+alias lem='mosh lem.ib.usp.br'    
 alias ccm='ssh diogro@proccm.redealuno.usp.br'
 alias q='exit'
 alias rm='rm -f'
@@ -70,8 +70,9 @@ alias install='sudo apt-get install -y'
 alias upall='sudo apt-get update && sudo aptitude safe-upgrade -y'
 alias search='apt-cache search'
 alias king='ssh kingman.ib.usp.br -p 1171'
-alias pullmain="rsync -avz --delete --rsh='ssh -p 1171' kingman.ib.usp.br:~/MainProject/ ~/MainProject/"
-alias pushmain="rsync -avz --delete --rsh='ssh -p 1171' ~/MainProject/ kingman.ib.usp.br:~/MainProject/"
+alias pullmain="rsync -avz --delete lem.ib.usp.br:~/MainProject/ ~/MainProject/"
+alias pushmain="rsync -avz --delete ~/MainProject/ lem.ib.usp.br:~/MainProject/"
 alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
+alias sudo='nocorrect noglob sudo'
 alias ack='ack-grep'
