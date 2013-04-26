@@ -81,4 +81,4 @@ alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/projects/julia # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/projects/julia:$HOME/.bin/btsync # Add RVM to PATH for scripting
