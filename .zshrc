@@ -76,7 +76,9 @@ alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
 alias ack='ack-grep'
+alias grep='ack-grep'
 alias julia='./projects/julia/julia'
+alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
