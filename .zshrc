@@ -30,7 +30,7 @@ source /opt/intel/composer_xe_2013.1.117/bin/compilervars.sh intel64
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras github virtualenvwrapper gpg-agent mosh rsync ssh-agent virtualenv tmux screen python)
+plugins=(git git-extras github virtualenvwrapper mosh rsync ssh-agent virtualenv tmux screen python)
 
 source $ZSH/oh-my-zsh.sh
 
