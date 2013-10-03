@@ -30,7 +30,7 @@ source /opt/intel/composer_xe_2013.1.117/bin/compilervars.sh intel64
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github virtualenvwrapper)
+plugins=(git git-extras github virtualenvwrapper gpg-agent mosh rsync ssh-agent virtualenv tmux screen python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,7 +42,7 @@ if [[ -x `which evince` ]]; then
 fi
 
 HISTSIZE=SAVEHIST=10000
-setopt incappendhistory 
+setopt incappendhistory
 setopt sharehistory
 setopt extendedhistory
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
@@ -61,8 +61,8 @@ REPORTTIME=10
 
 alias ll='ls -l'
 alias la='ls -a'
-alias gibbs='ssh gibbs.if.usp.br'    
-alias lem='mosh lem.ib.usp.br'    
+alias gibbs='ssh gibbs.if.usp.br'
+alias lem='mosh lem.ib.usp.br'
 alias ccm='ssh diogro@proccm.redealuno.usp.br'
 alias q='exit'
 alias rm='rm -f'
