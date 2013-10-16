@@ -75,10 +75,11 @@ alias pushmain="rsync -avz --delete ~/MainProject/ lem.ib.usp.br:~/MainProject/"
 alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
+alias cabal='nocorrect noglob cabal'
 alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin # Add RVM to PATH for scripting
