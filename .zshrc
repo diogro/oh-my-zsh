@@ -75,6 +75,7 @@ alias pushmain="rsync -avz --delete ~/MainProject/ lem.ib.usp.br:~/MainProject/"
 alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
+alias cabal='nocorrect noglob cabal'
 alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
