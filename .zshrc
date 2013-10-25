@@ -78,7 +78,9 @@ alias sudo='nocorrect noglob sudo'
 alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
+alias notebook="ipython notebook --pylab inline"
+alias ijulia="ipython notebook --profile julia"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin # Add RVM to PATH for scripting
