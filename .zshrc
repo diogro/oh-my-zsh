@@ -89,12 +89,28 @@ function fuck() {
     fi
 }
 
-if [ "x$DISPLAY" = "x" ]
+if [ "x$DISPLAY" != "x" ]
 then
-    function tvim(){ tmux new-session "vim $@" ; }
-else
+    if [ "screen" = "$TERM" ]
+    then
+        export TERM=screen-256color
+    else
+        export TERM=xterm-256color
+    fi
     alias vim='vim --servername VIM'
-    function tvim(){ tmux -2 new-session "TERM=screen-256color vim --servername VIM $@" ; }
+    if [ "x$TERM" = "xxterm" ] || [ "x$TERM" = "xxterm-256color" ]
+    then
+        function tvim(){ tmux -2 new-session "TERM=screen-256color vim --servername VIM $@" ; }
+    else
+        function tvim(){ tmux new-session "vim --servername VIM $@" ; }
+    fi
+else
+    if [ "x$TERM" = "xxterm" ] || [ "x$TERM" = "xxterm-256color" ]
+    then
+        function tvim(){ tmux -2 new-session "TERM=screen-256color vim $@" ; }
+    else
+        function tvim(){ tmux new-session "vim $@" ; }
+    fi
 fi
 
 PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools # Add RVM to PATH for scripting
