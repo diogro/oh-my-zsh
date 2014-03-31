@@ -72,7 +72,6 @@ alias search='apt-cache search'
 alias king='ssh kingman.ib.usp.br -p 1171'
 alias pullmain="rsync -avz --delete lem.ib.usp.br:~/MainProject/ ~/MainProject/"
 alias pushmain="rsync -avz --delete ~/MainProject/ lem.ib.usp.br:~/MainProject/"
-alias vi="vi $(ls -t1 | awk 'NR==1{print}')"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
 alias cabal='nocorrect noglob cabal'
@@ -89,6 +88,14 @@ function fuck() {
         echo ; echo " (╯°□°）╯︵$(echo "$2"|toilet -f term -F rotate)"; echo
     fi
 }
+
+if [ "x$DISPLAY" = "x" ]
+then
+    function tvim(){ tmux new-session "vim $@" ; }
+else
+    alias vim='vim --servername VIM'
+    function tvim(){ tmux -2 new-session "TERM=screen-256color vim --servername VIM $@" ; }
+fi
 
 PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools # Add RVM to PATH for scripting
 
