@@ -1,2 +1,4 @@
 alias brews='brew list -1'
-alias bubu="brew update && brew upgrade"
+alias bubo='brew update && brew outdated'
+alias bubc='brew upgrade && brew cleanup'
+alias bubu='bubo && bubc'
