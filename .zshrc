@@ -97,10 +97,10 @@ then
     else
         export TERM=xterm-256color
     fi
-    alias vim='vim --servername VIM'
+    alias vim='vim'
     if [ "x$TERM" = "xxterm" ] || [ "x$TERM" = "xxterm-256color" ]
     then
-        function tvim(){ tmux -2 new-session "TERM=screen-256color vim --servername VIM $@" ; }
+        function tvim(){ tmux -2 new-session "TERM=screen-256color vim $@" ; }
     else
         function tvim(){ tmux new-session "vim --servername VIM $@" ; }
     fi
