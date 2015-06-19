@@ -80,6 +80,7 @@ alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 alias notebook="ipython notebook --pylab inline"
 alias ijulia="ipython notebook --profile julia"
+alias R='R --no-save --no-restore-data'
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
@@ -97,10 +98,10 @@ then
     else
         export TERM=xterm-256color
     fi
-    alias vim='vim --servername VIM'
+    alias vim='vim'
     if [ "x$TERM" = "xxterm" ] || [ "x$TERM" = "xxterm-256color" ]
     then
-        function tvim(){ tmux -2 new-session "TERM=screen-256color vim --servername VIM $@" ; }
+        function tvim(){ tmux -2 new-session "TERM=screen-256color vim $@" ; }
     else
         function tvim(){ tmux new-session "vim --servername VIM $@" ; }
     fi
@@ -113,5 +114,7 @@ else
     fi
 fi
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/bin # Add RVM to PATH for scripting
 
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin # Add RVM to PATH for scripting
+MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
