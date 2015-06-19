@@ -79,6 +79,7 @@ alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 alias notebook="ipython notebook --pylab inline"
+
 alias ijulia="ipython notebook --profile julia"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
