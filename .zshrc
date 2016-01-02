@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="diogro"
 
 source /opt/intel/parallel_studio_xe_2016.1.056/bin/psxevars.sh
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -84,6 +85,11 @@ alias R='R --no-save --no-restore-data'
 alias WorldOfGoo="padsp WorldOfGoo"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
+
+function compressPDF(){
+ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=`echo $1 | sed -e s/.pdf/_LOW.pdf/` $1
+ }
+
 
 function fuck() {
     if killall -9 "$2"; then
