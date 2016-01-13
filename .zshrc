@@ -85,8 +85,8 @@ alias R='R --no-save --no-restore-data'
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
 function compressPDF(){
- gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=`echo $1 | sed -e s/.pdf/_LOW.pdf/` $1
- }
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=`echo $1 | sed -e s/.pdf/_LOW.pdf/` $1
+}
 
 
 function fuck() {
