@@ -7,7 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/composer_xe_2015/bin/compilervars.sh intel64
+source /opt/intel/parallel_studio_xe_2016.1.056/bin/psxevars.sh
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -81,6 +82,7 @@ alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 alias notebook="ipython notebook --pylab inline"
 alias ijulia="ipython notebook --profile julia"
 alias R='R --no-save --no-restore-data'
+alias WorldOfGoo="padsp WorldOfGoo"
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
@@ -123,3 +125,7 @@ fi
 PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin # Add RVM to PATH for scripting
 MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+eval "$(thefuck --alias)"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias FUCK)"
