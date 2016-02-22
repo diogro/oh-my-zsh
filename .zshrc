@@ -85,6 +85,11 @@ alias notebook="ipython notebook --pylab inline"
 alias ijulia="ipython notebook --profile julia"
 alias R='R --no-save --no-restore-data'
 alias WorldOfGoo="padsp WorldOfGoo"
+alias drm="docker rm -f"
+alias dps="docker ps -a"
+alias dkl="docker kill"
+alias dkall="docker kill $(docker ps -aq)"
+alias drmall="docker rm $(docker ps -aq)"
 
 export ALLOW_WGCNA_THREADS=12
 
