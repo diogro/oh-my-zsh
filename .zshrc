@@ -8,6 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="diogro"
 
 source /opt/intel/parallel_studio_xe_2016.1.056/bin/psxevars.sh
+LD_LIBRARY_PATH=/opt/intel/lib/intel64
+export LD_LIBRARY_PATH
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -83,6 +85,8 @@ alias notebook="ipython notebook --pylab inline"
 alias ijulia="ipython notebook --profile julia"
 alias R='R --no-save --no-restore-data'
 alias WorldOfGoo="padsp WorldOfGoo"
+
+export ALLOW_WGCNA_THREADS=12
 
 scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
 
