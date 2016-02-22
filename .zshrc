@@ -95,7 +95,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQ
 }
 
 
-function fuck() {
+function k() {
     if killall -9 "$2"; then
         echo ; echo " (╯°□°）╯︵$(echo "$2"|toilet -f term -F rotate)"; echo
     fi
@@ -126,10 +126,10 @@ else
 fi
 
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin
 MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
-eval "$(thefuck --alias FUCK)"
+eval "$(thefuck --alias fu)"
