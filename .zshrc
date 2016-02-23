@@ -88,8 +88,8 @@ alias WorldOfGoo="padsp WorldOfGoo"
 alias drm="docker rm -f"
 alias dps="docker ps -a"
 alias dkl="docker kill"
-alias dkall="docker kill $(docker ps -aq)"
-alias drmall="docker rm $(docker ps -aq)"
+dkall(){docker kill $(docker ps -aq)}
+drmall(){docker rm $(docker ps -aq)}
 
 export ALLOW_WGCNA_THREADS=12
 
