@@ -131,7 +131,8 @@ else
 fi
 
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin
+GOPATH=$HOME/bin/gocode
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin:$GOPATH/bin
 MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
