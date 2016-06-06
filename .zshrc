@@ -82,6 +82,7 @@ alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 alias notebook="ipython notebook --pylab inline"
+
 alias ijulia="ipython notebook --profile julia"
 alias R='R --no-save --no-restore-data'
 alias WorldOfGoo="padsp WorldOfGoo"

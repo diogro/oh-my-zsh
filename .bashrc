@@ -3,7 +3,7 @@
 # for examples
 #If running interactively, thed
 
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/bin:$HOME/mrbayes_3.2.2/src
 
 if [ "$PS1" ]; then
 
