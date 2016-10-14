@@ -3,7 +3,7 @@
 # for examples
 #If running interactively, thed
 
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/bin:$HOME/mrbayes_3.2.2/src
 
 if [ "$PS1" ]; then
 
@@ -81,3 +81,5 @@ P="\[\033[0m\]" # Neutral
     #  . /etc/bash_completion
     #fi
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
