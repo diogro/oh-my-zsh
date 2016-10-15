@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/parallel_studio_xe_2016.1.056/bin/psxevars.sh
+source /opt/intel/parallel_studio_xe_2016.3.067/bin/psxevars.sh
 LD_LIBRARY_PATH=/opt/intel/lib/intel64
 export LD_LIBRARY_PATH
 
@@ -69,8 +69,8 @@ alias lem='mosh lem.ib.usp.br'
 alias ccm='ssh diogro@proccm.redealuno.usp.br'
 alias q='exit'
 alias rm='rm -f'
-alias install='sudo apt-get install -y'
-alias upall='sudo apt-get update && sudo aptitude safe-upgrade -y'
+alias install='sudo apt install -y'
+alias upall='sudo apt update && sudo apt upgrade -y'
 alias search='apt-cache search'
 alias king='ssh kingman.ib.usp.br -p 1171'
 alias pullmain="rsync -avz --delete lem.ib.usp.br:~/MainProject/ ~/MainProject/"
