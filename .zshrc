@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/parallel_studio_xe_2016.1.056/bin/psxevars.sh
+source /opt/intel/parallel_studio_xe_2017.0.035/bin/psxevars.sh
 LD_LIBRARY_PATH=/opt/intel/lib/intel64
 export LD_LIBRARY_PATH
 
