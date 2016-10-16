@@ -33,7 +33,7 @@ export LD_LIBRARY_PATH
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras github virtualenvwrapper mosh rsync ssh-agent virtualenv tmux screen python)
+plugins=(git git-extras github virtualenvwrapper mosh rsync virtualenv tmux screen python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,8 +69,8 @@ alias lem='mosh lem.ib.usp.br'
 alias ccm='ssh diogro@proccm.redealuno.usp.br'
 alias q='exit'
 alias rm='rm -f'
-alias install='sudo apt-get install -y'
-alias upall='sudo apt-get update && sudo aptitude safe-upgrade -y'
+alias install='sudo apt install -y'
+alias upall='sudo apt update && sudo apt upgrade -y'
 alias search='apt-cache search'
 alias king='ssh kingman.ib.usp.br -p 1171'
 alias pullmain="rsync -avz --delete lem.ib.usp.br:~/MainProject/ ~/MainProject/"
@@ -82,14 +82,15 @@ alias ack='ack-grep'
 alias grep='ack-grep'
 alias rscp="rsync --rsh='ssh' --partial --progress --archive"
 alias notebook="ipython notebook --pylab inline"
+
 alias ijulia="ipython notebook --profile julia"
 alias R='R --no-save --no-restore-data'
 alias WorldOfGoo="padsp WorldOfGoo"
 alias drm="docker rm -f"
 alias dps="docker ps -a"
 alias dkl="docker kill"
-alias dkall="docker kill $(docker ps -aq)"
-alias drmall="docker rm $(docker ps -aq)"
+dkall(){docker kill $(docker ps -aq)}
+drmall(){docker rm $(docker ps -aq)}
 
 export ALLOW_WGCNA_THREADS=12
 
@@ -131,10 +132,12 @@ else
 fi
 
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin
+GOPATH=$HOME/bin/gocode
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin:$GOPATH/bin
 MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias fu)"
+source ~/.gnupg/gpg-agent-info
