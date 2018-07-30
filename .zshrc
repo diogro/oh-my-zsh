@@ -7,9 +7,14 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="diogro"
 
-source /opt/intel/parallel_studio_xe_2017.0.035/bin/psxevars.sh
-LD_LIBRARY_PATH=/opt/intel/lib/intel64
-export LD_LIBRARY_PATH
+#source /opt/intel/parallel_studio_xe_2017.0.035/bin/psxevars.sh
+#LD_LIBRARY_PATH=/opt/intel/lib/intel64
+#export LD_LIBRARY_PATH
+plugins=(git git-extras github mosh rsync virtualenv tmux screen python)
+
+source $ZSH/oh-my-zsh.sh
+
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -33,9 +38,11 @@ export LD_LIBRARY_PATH
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras github virtualenvwrapper mosh rsync virtualenv tmux screen python)
+#
+#
 
-source $ZSH/oh-my-zsh.sh
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export LD_LIBRARY_PATH
 
 # Customize to your needs...
 
@@ -64,7 +71,6 @@ REPORTTIME=10
 
 alias ll='ls -l'
 alias la='ls -a'
-alias gibbs='ssh gibbs.if.usp.br'
 alias lem='mosh lem.ib.usp.br'
 alias ccm='ssh diogro@proccm.redealuno.usp.br'
 alias q='exit'
@@ -72,9 +78,6 @@ alias rm='rm -f'
 alias install='sudo apt install -y'
 alias upall='sudo apt update && sudo apt upgrade -y'
 alias search='apt-cache search'
-alias king='ssh kingman.ib.usp.br -p 1171'
-alias pullmain="rsync -avz --delete lem.ib.usp.br:~/MainProject/ ~/MainProject/"
-alias pushmain="rsync -avz --delete ~/MainProject/ lem.ib.usp.br:~/MainProject/"
 alias mkdir='nocorrect noglob mkdir'
 alias sudo='nocorrect noglob sudo'
 alias cabal='nocorrect noglob cabal'
@@ -133,11 +136,14 @@ fi
 
 
 GOPATH=$HOME/bin/gocode
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin:$GOPATH/bin
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.cabal/bin:$HOME/.bin/anaconda:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/tools:$HOME/.bin/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.bin/R:$HOME/.linuxbrew/bin:/home/diogro/bin/anaconda3/bin:$GOPATH/bin:/usr/local/cuda-8.0/bin
 MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias fu)"
-source ~/.gnupg/gpg-agent-info
+#source ~/.gnupg/gpg-agent-info
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib64
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
